@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 
 export default function App() {
@@ -53,7 +54,9 @@ export default function App() {
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const paymentLink = import.meta.env.VITE_PAYMENT_LINK || "https://buy.stripe.com/test_payment_link"
+  // User-provided links
+  const calendlyLink = "https://calendly.com/yoequevedo2013/30min?hide_gdpr_banner=1"
+  const paymentLink = "https://buy.stripe.com/test_00w00c4ig42l3Lx9mIbbG00"
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
@@ -242,7 +245,13 @@ export default function App() {
       <section id="contacto" className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold">Solicita información</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">Reserva una llamada</h2>
+            <p className="mt-3 text-slate-600">Agenda una videollamada para evaluar tu caso (30 min).</p>
+            <div className="mt-4 aspect-[4/3] w-full rounded-2xl overflow-hidden">
+              <iframe title="Agenda" src="https://calendly.com/yoequevedo2013/30min?hide_gdpr_banner=1" className="w-full h-full"></iframe>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-bold mt-12">Solicita información</h2>
             <p className="mt-3 text-slate-600">Cuéntanos qué necesitas y te responderemos el mismo día. También atendemos por WhatsApp.</p>
             <div className="mt-6 rounded-3xl border border-slate-200 p-6 bg-white">
               <form action="https://formsubmit.co/yoequevedo2013@gmail.com" method="POST" className="grid gap-4" onSubmit={() => setFormSent(true)}>
@@ -281,10 +290,10 @@ export default function App() {
             </div>
           </div>
           <div className="rounded-3xl border border-slate-200 p-6 bg-white">
-            <h3 className="text-xl font-semibold">Reserva una llamada</h3>
-            <p className="mt-2 text-slate-600">Agenda una videollamada de 15 minutos para evaluar tu caso.</p>
-            <div className="mt-4 aspect-[4/3] w-full rounded-2xl overflow-hidden">
-              <iframe title="Agenda" src="https://calendly.com/cuidavitalsenior/asesoria-15min?hide_gdpr_banner=1" className="w-full h-full"></iframe>
+            <h3 className="text-xl font-semibold">Pagos</h3>
+            <p className="mt-2 text-slate-600">Puedes asegurar disponibilidad con una señal reembolsable al confirmar el plan.</p>
+            <div className="mt-4">
+              <a href="https://buy.stripe.com/test_00w00c4ig42l3Lx9mIbbG00" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 text-white px-5 py-3 font-medium shadow hover:bg-emerald-700">Pagar señal segura</a>
             </div>
             <div className="mt-6">
               <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden">
@@ -292,19 +301,6 @@ export default function App() {
               </div>
               <p className="mt-2 text-xs text-slate-500">Base en Madrid. Atendemos ciudad y alrededores.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pagos */}
-      <section id="pagos" className="py-12 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold">Reserva tu cuidador con una señal</h2>
-            <p className="mt-3 text-slate-600">Opcional: asegura disponibilidad con una señal reembolsable. Pagos seguros con Stripe.</p>
-          </div>
-          <div className="md:text-right">
-            <a href={paymentLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 text-white px-5 py-3 font-medium shadow hover:bg-emerald-700">Pagar señal segura</a>
           </div>
         </div>
       </section>
