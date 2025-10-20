@@ -1,0 +1,13 @@
+{
+  "name": "CuidadoVital Senior",
+  "short_name": "CuidadoVital",
+  "description": "Cuidado profesional y humano para personas mayores en Madrid.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#059669",
+  "icons": [
+    { "src": "/logo512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicon.ico", "sizes": "64x64", "type": "image/x-icon" }
+  ]
+}
